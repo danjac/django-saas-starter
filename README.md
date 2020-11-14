@@ -32,7 +32,7 @@ Build your docker environment:
 
     docker-compose build
 
-Open *users/models.py* and add any custom fields you might want at the start.
+A custom user model is provided. Open *users/models.py* and add any custom fields you might want at the start.
 
 Next run migrations:
 
