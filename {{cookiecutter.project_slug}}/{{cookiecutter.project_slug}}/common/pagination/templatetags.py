@@ -11,12 +11,6 @@ def pagination_url(context, page_number):
     provided page number into the template, preserving the original
     request path and any other query string parameters.
 
-    Usage:
-
-    {% raw %}
-    {% pagination_url 3 %}
-    {% endraw %}
-
     Given the above and a URL of "/search?q=test" the result would
     be something like:
 

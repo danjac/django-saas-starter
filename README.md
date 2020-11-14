@@ -58,7 +58,7 @@ To ensure all dependencies are up to date, you can use pip-tools (pip install pi
 
 And for frontend dependencies:
 
-    ./scripts/yarn update
+    ./scripts/yarn upgrade
 
 ## Templates
 
