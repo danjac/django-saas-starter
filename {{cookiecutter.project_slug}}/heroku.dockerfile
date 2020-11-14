@@ -1,6 +1,3 @@
-# Copyright (c) 2020 by Dan Jacob
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 FROM python:3.9.0-buster
 
 ENV PYTHONUNBUFFERED 1

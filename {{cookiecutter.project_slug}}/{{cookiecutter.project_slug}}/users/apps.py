@@ -6,4 +6,4 @@ from django.apps import AppConfig
 
 
 class UsersConfig(AppConfig):
-    name = "localhub.users"
+    name = "{{ cookiecutter.project_slug }}.users"

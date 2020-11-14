@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-# Copyright (c) 2020 by Dan Jacob
-# SPDX-License-Identifier: AGPL-3.0-or-later
 
 """Django's command-line utility for administrative tasks."""
 # Standard Library
@@ -9,7 +7,7 @@ import sys
 
 
 def main():
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "localhub.config.settings.local")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ cookiecutter.project_slug }}.config.settings.local")
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

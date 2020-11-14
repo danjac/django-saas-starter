@@ -115,8 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
+HOME_URL = LOGIN_REDIRECT_URL = "/"
+
 LOGIN_URL = "account_login"
-LOGIN_REDIRECT_URL = "/"
 
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = "username_email"
