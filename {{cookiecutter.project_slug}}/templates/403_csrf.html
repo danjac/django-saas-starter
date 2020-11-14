@@ -1,6 +1,4 @@
-{# Copyright (c) 2020 by Dan Jacob #}
-{# SPDX-License-Identifier: AGPL-3.0-or-later #}
-
+{% raw %}
 {% extends "error_base.html" %}
 {% load i18n %}
 {% block content %}
@@ -12,3 +10,4 @@
      href="{{ request.get_full_path }}">{% trans "Reload Page" %}</a>
 </p>
 {% endblock %}
+{% endraw %}
