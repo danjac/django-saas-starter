@@ -86,6 +86,25 @@ https://devcenter.heroku.com/articles/git
 
 https://www.heroku.com/deploy-with-docker
 
+You will need to set the following Heroku environment variables:
+
+- **ADMINS**: comma separated in form _my full name <name@mysite.com>,other name <othername@mysite.com>_
+- **ADMIN_URL**: should be something other than "admin/". Must end in forward slash.
+- **ALLOWED_HOSTS**: enter your domains, separated by comma e.g. *mysite.com, myothersite.com*. If you are using wildcard domain with subdomains for each community you just need the wildcard domain without the "*".
+- **AWS_STORAGE_BUCKET_NAME**: see your S3 settings
+- **AWS_ACCESS_KEY_ID**: see your S3 settings
+- **AWS_S3_CUSTOM_DOMAIN**: your cloudfront domain e.g. *xyz123abcdefg.cloudfront.net*
+- **CSRF_COOKIE_NAME**: should be same as your domain, preceded by "." e.g. *.mysite.com*
+- **CSRF_TRUSTED_ORIGINS**: should be same as CSRF_COOKIE_NAME
+- **SESSION_COOKIE_DOMAIN**: e.g. *mysite.com*
+- **DATABASE_URL**: provided by Heroku PostgreSQL buildpack
+- **DISABLE_COLLECTSTATIC**: set to "1"
+- **DJANGO_SETTINGS_MODULE**: should always be *myproject.config.settings.heroku*
+- **MAILGUN_API_KEY**: see your Mailgun settings
+- **MAILGUN_SENDER_DOMAIN**: see your Mailgun settings
+- **REDIS_URL**: provided by Heroku Redis buildpack
+- **SECRET_KEY**: Django secret key. Use e.g. https://miniwebtool.com/django-secret-key-generator/ to create new key.
+
 To deploy just run:
 
     ./scripts/deploy
