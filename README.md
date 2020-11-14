@@ -1,4 +1,4 @@
-This is an opinionated Django cookiecutter template. I use this template for quick MVPs, prototypes and side projects that may grow over time if they gain traction, so solid foundations based on tried-and-tested solutions are important.
+This is an opinionated Django cookiecutter template. I use this template for quick MVPs, prototypes and side projects that may grow over time if they gain traction, so solid foundations based on tried-and-tested solutions and best-practices are important.
 
 For a more configurable and complete starter template, I recommend https://github.com/pydanny/cookiecutter-django.
 
