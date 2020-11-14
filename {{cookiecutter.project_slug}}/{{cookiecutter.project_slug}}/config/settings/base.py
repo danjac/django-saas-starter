@@ -150,7 +150,7 @@ LANGUAGE_COOKIE_DOMAIN = env("LANGUAGE_COOKIE_DOMAIN", default=None)
 
 LOCALE_PATHS = [BASE_DIR / "i18n"]
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "{{ cookiecutter.timezone }}"
 
 USE_I18N = True
 
