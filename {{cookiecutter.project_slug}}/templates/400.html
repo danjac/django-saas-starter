@@ -1,0 +1,10 @@
+{% raw %}
+{% extends "error_base.html" %}
+{% load i18n %}
+{% block content %}
+<h1 class="page-header mb-3">{% trans "An error has occurred" %}</h1>
+<p>
+  {% trans "Sorry, we could not complete your request. Please try again later." %}
+</p>
+{% endblock %}
+{% endraw %}

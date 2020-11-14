@@ -1,0 +1,11 @@
+{# Copyright (c) 2020 by Dan Jacob #}
+{# SPDX-License-Identifier: AGPL-3.0-or-later #}
+
+{% extends "error_base.html" %}
+{% load i18n %}
+{% block content %}
+<h1 class="page-header mb-3">{% trans "Page not found" %}</h1>
+<p>
+  {% trans "Sorry, this page does not exist, or it has been removed." %}
+</p>
+{% endblock %}
