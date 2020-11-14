@@ -1,6 +1,3 @@
-# Copyright (c) 2020 by Dan Jacob
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 # Secure settings for production environment
 
 SECURE_BROWSER_XSS_FILTER = True

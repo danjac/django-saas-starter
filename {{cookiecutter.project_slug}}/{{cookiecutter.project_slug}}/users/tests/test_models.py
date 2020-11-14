@@ -1,6 +1,3 @@
-# Copyright (c) 2020 by Dan Jacob
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 # Third Party Libraries
 import pytest
 from allauth.account.models import EmailAddress
