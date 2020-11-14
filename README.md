@@ -34,9 +34,13 @@ Open users/models.py and add any custom fields you might want at the start.
 
 Next run migrations:
 
-    ./scripts/manage makemigrations
+    ./scripts/manage makemigrations users
 
     ./scripts/manage migrate
+
+To run unit tests with pytest:
+
+    ./scripts/runtests  [ARGS]
 
 You can now start the application:
 

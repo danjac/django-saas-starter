@@ -21,23 +21,21 @@ def get_response_not_allowed():
 
 
 class TestHttpResponseNotAllowedMiddleware:
-    def test_405_debug_false(self, rf, get_response_not_allowed, community):
+    def test_405_debug_false(self, rf, get_response_not_allowed):
         req = rf.get("/")
-        req.community = community
         mw = HttpResponseNotAllowedMiddleware(get_response_not_allowed)
         with override_settings(DEBUG=True):
             resp = mw(req)
             assert b"Not Allowed" not in resp.content
 
-    def test_405_debug_true(self, rf, get_response_not_allowed, community):
+    def test_405_debug_true(self, rf, get_response_not_allowed):
         req = rf.get("/")
-        req.community = community
         mw = HttpResponseNotAllowedMiddleware(get_response_not_allowed)
         with override_settings(DEBUG=False):
             resp = mw(req)
             assert b"Not Allowed" in resp.content
 
-    def test_not_405(self, rf, get_response, community):
+    def test_not_405(self, rf, get_response):
         req = rf.get("/")
         mw = HttpResponseNotAllowedMiddleware(get_response)
         with override_settings(DEBUG=False):
