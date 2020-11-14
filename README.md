@@ -1,4 +1,4 @@
-This is an opinionated Django cookie cutter template. For a more configurable cookiecutter, see https://github.com/pydanny/cookiecutter-django.
+This is an opinionated Django cookie cutter template. For a more configurable cookiecutter, see https://github.com/pydanny/cookiecutter-django. I use this template for quick MVPs and prototypes that might be expected to grow over time, so solid foundations based on tried-and-tested solutions are important.
 
 ## Features
 
