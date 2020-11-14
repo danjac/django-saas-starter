@@ -60,6 +60,21 @@ And for frontend dependencies:
 
     ./scripts/yarn update
 
+
+## Templates
+
+Django-allauth is used for authentication. This package has its own set of templates that should be overridden if you want to have Tailwind-styled login and sign up pages. You can do this by copying these templates into an *account/* folder under the *templates* folder in your project:
+
+https://github.com/pennersr/django-allauth/tree/master/allauth/templates
+
+## Tailwind
+
+You can add custom classes in the file *static/css/app.css* using the *@apply* directive. Compilation should be on-the-fly using PostCSS. See the Tailwind docs for more details.
+
+## Stimulusjs
+
+Turbolinks and Stimulusjs have been integrated to provide full frontend interactivity without the complexity and overhead of an SPA architecture. A few simple controllers are included to get started with.
+
 ## Deployment
 
 Ensure you have the correct AWS settings in your .env file. BASE_URL should point to your CDN.
