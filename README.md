@@ -2,6 +2,8 @@ This is an opinionated Django cookie cutter template. I use this template for qu
 
 For a more configurable and complex cookiecutter, see https://github.com/pydanny/cookiecutter-django.
 
+It is assumed that you have basic familiarity with Django, Heroku and AWS.
+
 ## Features
 
 * Heroku, AWS/S3 and Mailgun in production
