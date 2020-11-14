@@ -1,11 +1,8 @@
-# Copyright (c) 2020 by Dan Jacob
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
 # Local
 from . import env
 
-DEFAULT_FILE_STORAGE = "localhub.config.aws.MediaStorage"
-STATICFILES_STORAGE = "localhub.config.aws.StaticStorage"
+DEFAULT_FILE_STORAGE = "{{ cookiecutter.project_slug }}.config.aws.MediaStorage"
+STATICFILES_STORAGE = "{{ cookiecutter.project_slug }}.config.aws.StaticStorage"
 
 AWS_MEDIA_LOCATION = "media"
 AWS_STATIC_LOCATION = "static"

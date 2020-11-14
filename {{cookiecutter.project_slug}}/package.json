@@ -32,11 +32,7 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
-    "date-fns": "^2.11.1",
-    "hoverintent": "^2.2.1",
-    "js-cookie": "^2.2.1",
     "stimulus": "^1.1.1",
-    "textarea-caret": "^3.1.0",
     "turbolinks": "^5.2.0"
   }
 }
