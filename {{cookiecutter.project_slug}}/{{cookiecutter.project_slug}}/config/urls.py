@@ -6,8 +6,7 @@ from django.urls import include, path
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    # Local
-    # Third-party
+    path("", TemplateView.as_view(template_name="index.html")),
     path("account/", include("allauth.urls")),
     path(settings.ADMIN_URL, admin.site.urls),
 ]
