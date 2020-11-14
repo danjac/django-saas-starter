@@ -24,7 +24,7 @@ Now build the project:
 
     cookiecutter [github url]
 
-Change to your project directory and copy the file .env.example to .env. Set the SECRET_KEY. You can change the AWS settings when you have that set up.
+Change to your project directory and copy the file .env.example to .env. Set the SECRET_KEY. You can change the AWS settings when you need to deploy to production.
 
 Build your docker environment:
 
@@ -42,6 +42,13 @@ You can now start the application:
 
     docker-compose up -d
 
+To ensure all dependencies are up to date, you can use pip-tools (pip install piptools):
+
+    pip-compile requirements.in -o requirements.txt
+
+And for frontend dependencies:
+
+    ./scripts/yarn update
 
 Deployment
 

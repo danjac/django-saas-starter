@@ -1,15 +1,10 @@
-# Standard Library
-import io
-
 # Django
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AnonymousUser
-from django.core.files import File
 from django.http import HttpResponse
 
 # Third Party Libraries
 import pytest
-from PIL import Image
 
 from {{ cookiecutter.project_slug }}.users.factories import UserFactory
 
