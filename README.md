@@ -1,6 +1,6 @@
 This is an opinionated Django cookie cutter template. For a more configurable cookiecutter, see https://github.com/pydanny/cookiecutter-django.
 
-Features
+## Features
 
 * Heroku, AWS/S3 and Mailgun in production
 * Docker for local development
@@ -10,7 +10,7 @@ Features
 * Redis
 * PostgreSQL
 
-Getting Started
+## Getting Started
 
 You should have the following installed on your development machine:
 
@@ -22,15 +22,15 @@ You should have the following installed on your development machine:
 
 Now build the project:
 
-    cookiecutter [github url]
+    cookiecutter https://github.com/danjac/cookiecutter-django-turbolinks-tailwind
 
-Change to your project directory and copy the file .env.example to .env. Set the SECRET_KEY. You can change the AWS settings when you need to deploy to production.
+Change to your project directory and copy the file .env.example to .env. Set the **SECRET_KEY**. You can change the AWS settings when you need to deploy to production.
 
 Build your docker environment:
 
     docker-compose build
 
-Open users/models.py and add any custom fields you might want at the start.
+Open *users/models.py* and add any custom fields you might want at the start.
 
 Next run migrations:
 
@@ -54,25 +54,24 @@ And for frontend dependencies:
 
     ./scripts/yarn update
 
-Deployment
+## Deployment
 
 Ensure you have the correct AWS settings in your .env file. BASE_URL should point to your CDN.
 
-The following buildpacks are assumed:
+PostgreSQL and Redis buildpacks are required.
 
 Set up Heroku and Git as per the instructions. You need to set up Heroku to deploy a Docker image:
+
+https://devcenter.heroku.com/articles/git
+
+https://www.heroku.com/deploy-with-docker
 
 To deploy just run:
 
     ./scripts/deploy
 
-References
+## References
 
-* Turbolinks:
-* StimulusJS:
-* Tailwind:
-* Docker:
-* Heroku:
-
-
-
+* Turbolinks: https://github.com/turbolinks/turbolinks
+* StimulusJS: https://stimulusjs.org/
+* Tailwind: https://tailwindcss.com/
