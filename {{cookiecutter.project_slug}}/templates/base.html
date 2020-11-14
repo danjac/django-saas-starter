@@ -1,0 +1,94 @@
+{% raw %}
+{% spaceless %}
+
+{% load static %}
+{% load i18n %}
+
+{% endspaceless %}
+
+<!DOCTYPE html>
+{% get_current_language as language_code %}
+<html lang="{{ language_code }}">
+
+<head>
+  <title>
+    {% spaceless %}{% block title %}{% endraw %}{{ cookiecutter.project_name }}{% raw %}{% endblock %}{% endspaceless %}{% endraw %}
+  </title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="turbolinks-cache-control"
+        content="no-cache">
+  <meta name="copyright"
+        content="{{ cookiecutter.author_name }} {% raw %}{% now "Y" %}{% endraw %}">
+  <meta name="description"
+        content="Open source community web application">
+  <meta name="keywords"
+        content="open source,communities,private,local">
+  <meta name="robots"
+        content="index,follow">
+  {% include "includes/static.html" %}
+  {% include "includes/fontawesome.html" %}
+</head>
+
+<body class="h-screen container-lg mx-auto antialiased bg-gray-100">
+
+  {% raw %}
+  {% block header %}
+  {% endraw %}
+  <header class="bg-gradient-to-b from-indigo-900 to-indigo-700 text-white">
+    <div class="flex items-center justify-between p-2 md:px-12">
+      <div class="flex items-center flex-shrink-0 mr-6">
+        {{ cookiecutter.project_name }}
+      </div>
+      {% raw %}
+      {% if user.is_authenticated %}
+      <div>
+        <a href="/"
+           class="inline-block text-white hover:text-gray-100 md:mr-2">
+          {{ user.username }}
+        </a>
+        <a href="{% url 'account_logout' %}"
+           class="hidden md:inline-block text-white hover:text-gray-100"
+           role="button"
+           data-turbolinks="false"
+           data-controller="ajax"
+           data-action="ajax#post"
+           data-ajax-redirect="/">{% trans "Logout" %}</a>
+      </div>
+      {% else %}
+      <div>
+        <a href="{% url 'account_login' %}"
+           class="inline-block text-white hover:text-gray-100 mr-2">{% trans "Login" %}</a>
+        <a href="{% url 'account_signup' %}"
+           class="inline-block text-white hover:text-gray-100">{% trans "Signup" %}</a>
+      </div>
+      {% endif %}
+    </div>
+
+  </header>
+  {% endblock header %}
+
+  {% block layout %}
+
+  {% include "_messages.html" %}
+  {% include "_cookie_notice.html" %}
+
+  <div class="mt-2 px-2 md:mt-3 md:px-12 flex min-h-full">
+
+    <div class="container mx-auto flex justify-center min-h-full">
+      <div class="w-full lg:w-3/5 mt-5 px-2 md:px-5">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    {% endblock layout %}
+
+    {% block footer %}
+    {% include "_footer.html" %}
+    {% endblock footer %}
+
+</body>
+
+</html>
+
+{% endraw %}

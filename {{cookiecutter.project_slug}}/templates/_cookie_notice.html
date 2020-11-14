@@ -1,0 +1,22 @@
+{% raw %}
+<div class="text-white bg-gray-800 w-full py-3 flex justify-center hidden"
+     data-controller="cookie-notice">
+  <div class="px-2">
+    <div class="md:flex items-center">
+      <p class="mb-3 md:mb-0 md:mr-4">
+        {% trans %}This site uses cookies to ensure you get the best experience.{% endtrans %}
+        <a href="https://www.internetcookies.org/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="underline text-white">{% trans "Learn more" %}</a>
+      </p>
+      <div class="text-center md:text-start">
+        <button class="bg-blue-800 hover:bg-blue-600 text-white px-4 p-1 border border-white w-full sm:w-auto"
+                data-action="cookie-notice#dismiss">
+          {% trans "Got it!" %}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endraw %}
