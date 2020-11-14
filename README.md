@@ -70,7 +70,7 @@ https://github.com/pennersr/django-allauth/tree/master/allauth/templates
 
 You can add custom classes in the file *static/css/app.css* using the *@apply* directive. Compilation should be on-the-fly using PostCSS. See the Tailwind docs for more details.
 
-## Stimulusjs
+## Turbolinks/Stimulusjs
 
 Turbolinks and Stimulusjs have been integrated to provide sufficient frontend interactivity without the complexity and overhead of an SPA architecture. A few simple controllers are included to get started with. A small middleware class is provided to handle redirects, as detailed in the Turbolinks documentation.
 
