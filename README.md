@@ -38,6 +38,8 @@ Next run migrations:
 
     ./scripts/manage migrate
 
+You can run any other Django management commands locally with *./scripts/manage*.
+
 To run unit tests with pytest:
 
     ./scripts/runtests  [ARGS]
@@ -69,6 +71,8 @@ https://www.heroku.com/deploy-with-docker
 To deploy just run:
 
     ./scripts/deploy
+
+This is a very barebones deployment that just pushes assets to S3 and deploys your application to Heroku. You may wish to expand to use a CI/CD pipeline such as Github Actions or Travis, or Ansible or Terraform for provisioning servers etc.
 
 ## References
 
