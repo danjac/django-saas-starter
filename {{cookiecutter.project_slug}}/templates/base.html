@@ -71,23 +71,13 @@
   </header>
   {% endblock header %}
 
-  {% block layout %}
-
   {% include "_messages.html" %}
   {% include "_cookie_notice.html" %}
 
-  <div class="mt-2 px-2 md:mt-3 md:px-12 flex min-h-full">
-
-    <div class="container mx-auto flex justify-center min-h-full">
-      <div class="w-full lg:w-3/5 mt-5 px-2 md:px-5">
-        {% block content %}{% endblock %}
-      </div>
-    </div>
-    {% endblock layout %}
-
-    {% block footer %}
-    {% include "_footer.html" %}
-    {% endblock footer %}
+  <div class="h-full mx-auto p-2 md:px-12">
+    {% block content %}{% endblock %}
+  </div>
+  {% include "_footer.html" %}
 
 </body>
 
