@@ -3,34 +3,6 @@ import Turbolinks from "turbolinks";
 import { Controller } from "stimulus";
 
 export default class extends Controller {
-  // Generic AJAX actions
-  // Actions:
-  //
-  // data-action="ajax#post" : sends a POST
-  // data-action="ajax#get" etc
-  //
-  // Attributes:
-  //
-  // data-ajax-url: URL endpoint
-  // data-ajax-confirm: confirmation dialog message. No confirm dialog will be shown if absent.
-  //
-  // data-ajax-replace: replaces inner HTML of controller element with HTML returned from server.
-  // to replace inner HTML of child element, add data-target="ajax.replace"
-  //
-  // data-ajax-remove: removes the controller element after successful request.
-  // to remove a child element, add data-target="ajax.remove"
-  //
-  // data-ajax-redirect:
-  //
-  // If server sends a Turbolinks redirect in the response header, this will be automatically applied if
-  // data-ajax-replace or data-ajax-remove attributes are not present. To override this use data-ajax-redirect.
-  //
-  // For example, if the server sends the redirect "/profile" and data-ajax-redirect="/" then redirect
-  // will be sent to "/" not "/profile". If data-ajax-redirect is not present then will automatically
-  // redirect to "/profile".
-  //
-  // If data-ajax-redirect is set to "none" then server redirect is ignored and nothing else happens.
-
   static targets = ["replace", "remove"];
 
   get() {
