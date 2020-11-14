@@ -13,7 +13,9 @@ def pagination_url(context, page_number):
 
     Usage:
 
+    {% raw %}
     {% pagination_url 3 %}
+    {% endraw %}
 
     Given the above and a URL of "/search?q=test" the result would
     be something like:
