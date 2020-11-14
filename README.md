@@ -1,6 +1,6 @@
 This is an opinionated Django cookie cutter template. I use this template for quick MVPs and prototypes that might be expected to grow over time, so solid foundations based on tried-and-tested solutions are important.
 
-For a more configurable and complex cookiecutter, see https://github.com/pydanny/cookiecutter-django.
+For a more configurable and complete cookiecutter, I recommend https://github.com/pydanny/cookiecutter-django.
 
 It is assumed that you have basic familiarity with Django, Heroku and AWS.
 
@@ -28,7 +28,7 @@ Now build the project:
 
     cookiecutter https://github.com/danjac/cookiecutter-django-turbolinks-tailwind
 
-Change to your project directory and copy the file .env.example to .env. Set the **SECRET_KEY**. You can change the AWS settings when you need to deploy to production.
+Change to the generated directory and copy the file .env.example to .env. You must set the **SECRET_KEY**! AWS settings should be set before deploying to production, but are not required to get started in local development.
 
 Build your docker environment:
 
@@ -72,11 +72,11 @@ You can add custom classes in the file *static/css/app.css* using the *@apply* d
 
 ## Stimulusjs
 
-Turbolinks and Stimulusjs have been integrated to provide full frontend interactivity without the complexity and overhead of an SPA architecture. A few simple controllers are included to get started with.
+Turbolinks and Stimulusjs have been integrated to provide sufficient frontend interactivity without the complexity and overhead of an SPA architecture. A few simple controllers are included to get started with. A small middleware class is provided to handle redirects, as detailed in the Turbolinks documentation.
 
 ## Deployment
 
-Ensure you have the correct AWS settings in your .env file. BASE_URL should point to your CDN.
+Ensure you have the correct AWS settings in your .env file.
 
 PostgreSQL and Redis buildpacks are required.
 
