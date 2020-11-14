@@ -60,10 +60,9 @@ And for frontend dependencies:
 
     ./scripts/yarn update
 
-
 ## Templates
 
-Django-allauth is used for authentication. This package has its own set of templates that should be overridden if you want to have Tailwind-styled login and sign up pages. You can do this by copying these templates into an *account/* folder under the *templates* folder in your project:
+Django-allauth is used for authentication. This package has its own set of templates that should be overridden if you want to have Tailwind-styled login and sign up pages. You can do this by copying the templates below to the *templates/account* folder in your project and modifying them as needed:
 
 https://github.com/pennersr/django-allauth/tree/master/allauth/templates
 
