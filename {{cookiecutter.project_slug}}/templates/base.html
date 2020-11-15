@@ -40,18 +40,18 @@
   {% endraw %}
   <header class="bg-gradient-to-b from-indigo-900 to-indigo-700 text-white">
     <div class="flex items-center justify-between p-2 md:px-12">
-      <div class="flex items-center flex-shrink-0 mr-6">
+      <div class="flex items-center flex-shrink-0 mr-6 text-lg">
         <a href="/">{{ cookiecutter.project_name }}</a>
       </div>
       {% raw %}
       {% if user.is_authenticated %}
       <div>
         <a href="/"
-           class="inline-block text-white hover:text-gray-100 md:mr-2">
+           class="inline-block text-white hover:text-gray-100">
           {{ user.username }}
         </a>
         <a href="{% url 'account_logout' %}"
-           class="hidden md:inline-block text-white hover:text-gray-100"
+           class="inline-block text-white hover:text-gray-100"
            role="button"
            data-turbolinks="false"
            data-controller="ajax"
