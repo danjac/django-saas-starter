@@ -62,6 +62,10 @@ And for frontend dependencies:
 
 Remember to do *docker-compose build* after updating backend or frontend dependencies.
 
+Before your first Git commit, set up pre-commit hooks:
+
+    pre-commit install
+
 ## Templates
 
 Django-allauth is used for authentication. This package has its own set of templates that should be overridden if you want to have Tailwind-styled login and sign up pages. You can do this by copying the templates below to the *templates/account* folder in your project and modifying them as needed:
