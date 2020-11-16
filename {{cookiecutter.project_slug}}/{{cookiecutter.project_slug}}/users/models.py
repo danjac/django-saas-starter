@@ -1,5 +1,4 @@
 # Django
-from django.conf import settings
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -57,11 +56,6 @@ class UserManager(BaseUserManager.from_queryset(UserQuerySet)):
 class User(AbstractUser):
     name = models.CharField(_("Full name"), blank=True, max_length=255)
 
-    language = models.CharField(
-        max_length=6,
-        choices=settings.LANGUAGES,
-        default=settings.LANGUAGE_CODE,
-    )
     objects = UserManager()
 
     def get_email_addresses(self):
