@@ -88,7 +88,6 @@ MIDDLEWARE = [
 ]
 
 DEFAULT_PAGE_SIZE = 12
-LONG_PAGE_SIZE = 24
 
 # base Django admin URL (should be something obscure in production)
 
