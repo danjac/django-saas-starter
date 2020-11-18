@@ -26,7 +26,7 @@ You should have the following installed on your development machine:
 
 Now build the project:
 
-    cookiecutter https://github.com/danjac/cookiecutter-django-turbolinks-tailwind
+    cookiecutter https://github.com/danjac/django-saas-starter
 
 Change to the generated directory and copy the file .env.example to .env. You must set the **SECRET_KEY**! AWS settings should be set before deploying to production, but are not required to get started in local development.
 
