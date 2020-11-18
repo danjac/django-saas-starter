@@ -1,6 +1,6 @@
-This is an opinionated Django cookiecutter template. I use this template for quick MVPs, prototypes and side projects that may grow over time if they gain traction, so solid foundations based on tried-and-tested solutions and best practices are important.
+This is an opinionated Django cookiecutter template. It is useful for quick MVPs, prototypes and side projects that may grow over time if they gain traction, so solid foundations based on tried-and-tested solutions and best practices are important.
 
-For a more configurable and complete starter template, I recommend https://github.com/pydanny/cookiecutter-django.
+For a more configurable and complete starter template, https://github.com/pydanny/cookiecutter-django is strongly recommended.
 
 It is assumed that you have basic familiarity with Django, Heroku and AWS.
 
