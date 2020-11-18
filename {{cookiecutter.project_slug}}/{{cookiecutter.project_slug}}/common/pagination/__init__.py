@@ -21,3 +21,12 @@ def paginate(
         return paginator.page(int(request.GET.get(param, 1)))
     except (ValueError, InvalidPage):
         raise Http404(_("Invalid page"))
+
+
+def get_paginated_context(page, extra_context=None):
+    return {
+        "page_obj": page,
+        "is_paginated": page.has_other_pages(),
+        "object_list": page.object_list,
+        "paginator": page.paginator,
+    } | (extra_context or {})
