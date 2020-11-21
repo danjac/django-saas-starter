@@ -3,7 +3,7 @@ import Turbolinks from 'turbolinks';
 import { Controller } from 'stimulus';
 
 export default class extends Controller {
-  static targets = ['replace', 'remove'];
+  static targets = ['fragment'];
 
   get(event) {
     event.preventDefault();
@@ -33,40 +33,54 @@ export default class extends Controller {
 
     const url = this.data.get('url') || this.element.getAttribute('href');
 
+    const headers = {
+      'Turbolinks-Referrer': location.href,
+    };
+
+    const replace = this.data.has('replace');
+
+    // request server return an HTML fragment to insert into DOM
+    //
+    if (replace) {
+      headers['X-Request-Fragment'] = true;
+    }
+
     const response = await axios({
-      headers: {
-        'Turbolinks-Referrer': location.href,
-      },
+      headers,
       method,
       url,
     });
 
     const redirect = this.data.get('redirect');
+
     if (redirect) {
       if (redirect !== 'none') Turbolinks.visit(redirect);
       return;
     }
 
-    if (this.data.has('replace')) {
-      if (this.hasReplaceTarget) {
-        this.replaceTarget.innerHTML = response.data;
+    // remove target
+    if (this.data.has('remove')) {
+      if (this.hasFragmentTargets) {
+        this.fragmentTargets.forEach((target) => target.remove());
+      } else {
+        this.element.remove();
+      }
+      return;
+    }
+
+    const contentType = response.headers['content-type'];
+
+    if (replace && contentType.match(/html/)) {
+      if (this.hasFragmentTargets) {
+        this.fragmentTargets.forEach((target) => (target.innerHTML = response.data));
       } else {
         this.element.innerHTML = response.data;
       }
       return;
     }
 
-    if (this.data.has('remove')) {
-      if (this.hasRemoveTarget) {
-        this.removeTarget.remove();
-      } else {
-        this.element.remove();
-      }
-      return;
-    }
-    //
     // default behaviour: redirect passed down in header
-    if (!redirect && response.headers['content-type'].match(/javascript/)) {
+    if (!redirect && contentType.match(/javascript/)) {
       /* eslint-disable-next-line no-eval */
       eval(response.data);
     }
