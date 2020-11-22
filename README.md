@@ -109,9 +109,6 @@ You will need to set the following Heroku environment variables:
 - **AWS_STORAGE_BUCKET_NAME**: see your S3 settings
 - **AWS_ACCESS_KEY_ID**: see your S3 settings
 - **AWS_S3_CUSTOM_DOMAIN**: your cloudfront domain e.g. *xyz123abcdefg.cloudfront.net*
-- **CSRF_COOKIE_NAME**: should be same as your domain, preceded by "." e.g. *.mysite.com*
-- **CSRF_TRUSTED_ORIGINS**: should be same as CSRF_COOKIE_NAME
-- **SESSION_COOKIE_DOMAIN**: e.g. *mysite.com*
 - **DATABASE_URL**: provided by Heroku PostgreSQL buildpack
 - **DISABLE_COLLECTSTATIC**: set to "1"
 - **DJANGO_SETTINGS_MODULE**: should always be *myproject.config.settings.heroku*
