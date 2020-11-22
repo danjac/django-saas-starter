@@ -4,6 +4,8 @@ For a more configurable and complete starter template, https://github.com/pydann
 
 It is assumed that you have basic familiarity with Django, Heroku and AWS.
 
+For a full example, see https://github.com/danjac/conduit/
+
 ## Features
 
 * Heroku, AWS/S3 and Mailgun in production
