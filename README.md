@@ -8,13 +8,17 @@ For a full example, see https://github.com/danjac/conduit/
 
 ## Features
 
-* Heroku, AWS/S3 and Mailgun in production
 * Docker for local development
 * Turbolinks/StimulusJS for JS
 * Tailwind/PostCSS for CSS
 * Celery
 * Redis
 * PostgreSQL
+* Heroku for deployment
+* AWS/S3 for production static/media assets
+* Mailgun for production emails
+* Mailhog for local dev emails
+* Custom user model
 
 ## Getting Started
 
