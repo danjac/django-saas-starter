@@ -1,5 +1,5 @@
 # Local
-from . import INSTALLED_APPS, env
+from ..base import INSTALLED_APPS, env
 
 CELERY_EMAIL_BACKEND = "anymail.backends.mailgun.EmailBackend"
 

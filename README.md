@@ -94,6 +94,12 @@ https://devcenter.heroku.com/articles/git
 
 https://www.heroku.com/deploy-with-docker
 
+Remember to run:
+
+    heroku stack:set container
+
+in order to deploy using *heroku.yml*.
+
 You will need to set the following Heroku environment variables:
 
 - **ADMINS**: comma separated in form _my full name <name@mysite.com>,other name <othername@mysite.com>_
