@@ -88,17 +88,18 @@ Ensure you have the correct AWS settings in your .env file. We use a single buck
 
 PostgreSQL and Redis buildpacks are required.
 
-Set up Heroku and Git as per the instructions. You need to set up Heroku to deploy a Docker image:
+Set up Heroku, S3, Cloudfront and Git as per the instructions. You need to set up Heroku to deploy a Docker image:
+
+    heroku git:remote -a APP_NAME
+
+    heroku stack:set container
+
+For more details see:
 
 https://devcenter.heroku.com/articles/git
 
 https://www.heroku.com/deploy-with-docker
 
-Remember to run:
-
-    heroku stack:set container
-
-in order to deploy using *heroku.yml*.
 
 You will need to set the following Heroku environment variables:
 
