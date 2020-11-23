@@ -27,5 +27,6 @@ pytest-randomly
 pytest-xdist
 pytz
 redis
+sentry_sdk
 unidecode
 werkzeug
