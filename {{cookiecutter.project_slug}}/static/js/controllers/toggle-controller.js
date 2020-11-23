@@ -1,23 +1,20 @@
-import { Controller } from "stimulus";
+import { Controller } from 'stimulus';
 
 export default class extends Controller {
-  static targets = ["item"];
+  static targets = ['item'];
 
-  connect() {
-    // automatically remove elements on page load
-    const timeout = parseInt(this.data.get("timeout"));
-    if (!isNaN(timeout) && timeout > 0) {
-      setTimeout(() => this.remove(), timeout);
+  toggle() {
+    // toggle DOM element
+    if (this.hasItemTargets) {
+      this.itemTargets.forEach((item) => {
+        item.classList.toggle(this.toggleClass);
+      });
+    } else {
+      this.element.classList.toggle(this.toggleClass);
     }
   }
 
-  remove() {
-    this.itemTargets.forEach((item) => {
-      item.setAttribute(
-        "style",
-        "transition: 1s; transform:translate(400px, 0);"
-      );
-      item.remove();
-    });
+  get toggleClass() {
+    return this.data.get('class') || 'hidden';
   }
 }
