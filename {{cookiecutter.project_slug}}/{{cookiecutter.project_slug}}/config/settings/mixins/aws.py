@@ -1,8 +1,8 @@
 # Local
 from ..base import env
 
-DEFAULT_FILE_STORAGE = "{{ cookiecutter.project_slug }}.config.aws.MediaStorage"
-STATICFILES_STORAGE = "{{ cookiecutter.project_slug }}.config.aws.StaticStorage"
+DEFAULT_FILE_STORAGE = "{{ cookiecutter.project_slug }}.config.storages.MediaStorage"
+STATICFILES_STORAGE = "{{ cookiecutter.project_slug }}.config.storages.StaticStorage"
 
 AWS_MEDIA_LOCATION = "media"
 AWS_STATIC_LOCATION = "static"
