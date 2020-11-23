@@ -13,8 +13,8 @@ repos:
     rev: 3.8.0a2
     hooks:
       - id: flake8
-  - repo: https://github.com/prettier/prettier
-    rev: '2.0.5'
+  - repo: https://github.com/awebdeveloper/pre-commit-prettier
+    rev: ''
     hooks:
       - id: prettier
         exclude: 'templates/|mockups/|README.md'
