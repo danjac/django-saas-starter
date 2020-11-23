@@ -11,14 +11,14 @@ def get_random_string(length=50):
 def generate_env_file():
     secret_key = get_random_string()
     with open(".env", "w") as fp:
-        fp.writeline(f'SECRET_KEY="{secret_key}"')
+        fp.write(f'SECRET_KEY="{secret_key}"\n')
 
         for aws_key in (
             "AWS_ACCESS_KEY_ID",
             "AWS_SECRET_ACCESS_KEY",
             "AWS_STORAGE_BUCKET_NAME",
         ):
-            fp.writeline(f'{aws_key}="****"')
+            fp.write(f'{aws_key}="****"\n')
 
 
 def main():
