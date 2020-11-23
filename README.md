@@ -29,6 +29,7 @@ You should have the following installed on your development machine:
 * pre-commit hooks (pip install pre-commit)
 * prettier (npm install -g prettier)
 * eslint (npm install -g eslint)
+* Heroku CLI (see https://devcenter.heroku.com/articles/heroku-cli)
 
 Now build the project:
 
