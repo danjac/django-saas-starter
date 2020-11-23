@@ -73,11 +73,13 @@ Before your first Git commit, set up pre-commit hooks:
 
     pre-commit install
 
-## Templates
+## Authentication
 
 Django-allauth is used for authentication. This package has its own set of templates that should be overridden if you want to have Tailwind-styled login and sign up pages. You can do this by copying the templates below to the *templates/account* folder in your project and modifying them as needed:
 
 https://github.com/pennersr/django-allauth/tree/master/allauth/templates
+
+Example configuration is provided for social logins e.g. Google or Facebook. See the all-auth docs for more details.
 
 ## Tailwind
 
