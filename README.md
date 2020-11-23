@@ -35,8 +35,6 @@ Now build the project:
 
     cookiecutter https://github.com/danjac/django-saas-starter
 
-Change to the generated directory and copy the file .env.example to .env. You must set the **SECRET_KEY**! AWS settings should be set before deploying to production, but are not required to get started in local development.
-
 Build your docker environment:
 
     docker-compose build
@@ -91,7 +89,7 @@ Turbolinks and Stimulusjs have been integrated to provide sufficient frontend in
 
 ## Deployment
 
-Ensure you have the correct AWS settings in your .env file. We use a single bucket for both static and (user uploaded) media, with separate folders for each, so you just need to set up a single bucket for your deployment.
+Ensure you have the correct AWS settings in your generate *.env* file. We use a single bucket for both static and (user uploaded) media, with separate folders for each, so you just need to set up a single bucket for your deployment.
 
 PostgreSQL and Redis buildpacks are required.
 
