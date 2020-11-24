@@ -89,7 +89,7 @@ Turbolinks and Stimulusjs have been integrated to provide sufficient frontend in
 
 ## Deployment
 
-Ensure you have the correct AWS settings in your generate *.env* file. We use a single bucket for both static and (user uploaded) media, with separate folders for each, so you just need to set up a single bucket for your deployment.
+Ensure you have the correct AWS settings in your generated *.env* file. We use a single bucket for both static and (user uploaded) media, with separate folders for each, so you just need to set up a single bucket for your deployment.
 
 PostgreSQL and Redis buildpacks are required.
 
