@@ -43,7 +43,7 @@
       {% if user.is_authenticated %}
       <div>
         <a href="/"
-           class="inline-block text-white hover:text-gray-100">
+           class="inline-block text-white hover:text-gray-100 mr-2">
           {{ user.username }}
         </a>
         <a href="{% url 'account_logout' %}"
