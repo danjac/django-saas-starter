@@ -136,3 +136,7 @@ If you want to include Sentry for production performance and error monitoring, j
 * Turbolinks: https://github.com/turbolinks/turbolinks
 * StimulusJS: https://stimulusjs.org/
 * Tailwind: https://tailwindcss.com/
+
+## License
+
+This project is covered by GNU Affero General Public License (AGPL).
