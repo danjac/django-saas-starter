@@ -52,14 +52,14 @@
            data-turbolinks="false"
            data-controller="ajax"
            data-action="ajax#post"
-           data-ajax-redirect="/">{% trans "Logout" %}</a>
+           data-ajax-redirect="/">{% translate "Logout" %}</a>
       </div>
       {% else %}
       <div>
         <a href="{% url 'account_login' %}"
-           class="inline-block text-white hover:text-gray-100 mr-2">{% trans "Login" %}</a>
+           class="inline-block text-white hover:text-gray-100 mr-2">{% translate "Login" %}</a>
         <a href="{% url 'account_signup' %}"
-           class="inline-block text-white hover:text-gray-100">{% trans "Signup" %}</a>
+           class="inline-block text-white hover:text-gray-100">{% translate "Signup" %}</a>
       </div>
       {% endif %}
     </div>

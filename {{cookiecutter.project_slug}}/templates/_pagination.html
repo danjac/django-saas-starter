@@ -10,7 +10,7 @@
      class="text-gray-500 pointer-events-none"
      href="javascript:void(0);"
      {% endif %}>
-    {% trans "Previous" %}
+    {% translate "Previous" %}
   </a>
   <a {% if page_obj.has_next %}
      href="{% pagination_url page_obj.next_page_number %}"
@@ -19,7 +19,7 @@
      href="javascript:void(0);"
      class="text-gray-500 pointer-events-none"
      {% endif %}>
-    {% trans "Next" %}
+    {% translate "Next" %}
   </a>
 </div>
 {% endif %}
