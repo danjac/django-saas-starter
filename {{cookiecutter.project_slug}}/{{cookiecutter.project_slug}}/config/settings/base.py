@@ -78,6 +78,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.locale.LocaleMiddleware",
     "{{ cookiecutter.project_slug }}.common.middleware.turbolinks.TurbolinksMiddleware",
+    "{{ cookiecutter.project_slug }}.common.middleware.ajax.AjaxRequestFragmentMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
