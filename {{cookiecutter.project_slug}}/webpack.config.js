@@ -26,7 +26,7 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', { targets: { esmodules: true }, bugfixes: true }],
+              ['@babel/preset-env', { targets: '> 0.25%, not dead', bugfixes: true }],
             ],
             plugins: [
               '@babel/plugin-proposal-class-properties',
