@@ -1,0 +1,6 @@
+[submodule "examples/kando"]
+	path = examples/kando
+	url = https://github.com/danjac/kando/
+[submodule "examples/conduit"]
+	path = examples/conduit
+	url = https://github.com/danjac/conduit
