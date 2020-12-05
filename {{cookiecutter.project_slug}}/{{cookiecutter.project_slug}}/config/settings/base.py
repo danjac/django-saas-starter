@@ -146,6 +146,7 @@ LANGUAGES = [
     ("en-gb", "English (GB)"),
 ]
 LANGUAGE_COOKIE_DOMAIN = env("LANGUAGE_COOKIE_DOMAIN", default=None)
+LANGUAGE_COOKIE_SAMESITE = "Lax"
 
 LOCALE_PATHS = [BASE_DIR / "i18n"]
 
