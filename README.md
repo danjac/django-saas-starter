@@ -4,11 +4,6 @@ For a more configurable and complete starter template, https://github.com/pydann
 
 It is assumed that you have basic familiarity with Django, Heroku and AWS.
 
-For some complete examples:
-
-* https://github.com/danjac/conduit/
-* https://github.com/danjac/kando/
-
 ## Features
 
 * Docker for local development
