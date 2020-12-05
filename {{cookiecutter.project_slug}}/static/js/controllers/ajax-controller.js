@@ -4,6 +4,13 @@ import { Controller } from 'stimulus';
 
 export default class extends Controller {
   static targets = ['fragment'];
+  static values = {
+    confirm: String,
+    redirect: String,
+    remove: Boolean,
+    replace: Boolean,
+    url: String,
+  };
 
   get(event) {
     event.preventDefault();
@@ -26,22 +33,19 @@ export default class extends Controller {
   }
 
   async dispatch(method) {
-    const confirmMsg = this.data.get('confirm');
-    if (confirmMsg && !window.confirm(confirmMsg)) {
+    if (this.hasConfirmValue && !window.confirm(this.confirmValue)) {
       return;
     }
 
-    const url = this.data.get('url') || this.element.getAttribute('href');
+    const url = this.urlValue || this.element.getAttribute('href');
 
     const headers = {
       'Turbolinks-Referrer': location.href,
     };
 
-    const replace = this.data.has('replace');
-
     // request server return an HTML fragment to insert into DOM
     //
-    if (replace) {
+    if (this.hasReplaceValue) {
       headers['X-Request-Fragment'] = true;
     }
 
@@ -51,15 +55,13 @@ export default class extends Controller {
       url,
     });
 
-    const redirect = this.data.get('redirect');
-
-    if (redirect) {
-      if (redirect !== 'none') Turbolinks.visit(redirect);
+    if (this.hasRedirectValue) {
+      if (this.redirectValue !== 'none') Turbolinks.visit(this.redirectValue);
       return;
     }
 
     // remove target
-    if (this.data.has('remove')) {
+    if (this.hasRemoveValue) {
       if (this.hasFragmentTargets) {
         this.fragmentTargets.forEach((target) => target.remove());
       } else {
@@ -70,7 +72,7 @@ export default class extends Controller {
 
     const contentType = response.headers['content-type'];
 
-    if (replace && contentType.match(/html/)) {
+    if (this.hasReplaceValue && contentType.match(/html/)) {
       if (this.hasFragmentTargets) {
         this.fragmentTargets.forEach((target) => (target.innerHTML = response.data));
       } else {
@@ -80,7 +82,7 @@ export default class extends Controller {
     }
 
     // default behaviour: redirect passed down in header
-    if (!redirect && contentType.match(/javascript/)) {
+    if (contentType.match(/javascript/)) {
       /* eslint-disable-next-line no-eval */
       eval(response.data);
     }

@@ -4,13 +4,8 @@ export default class extends Controller {
   static targets = ['item'];
 
   toggle() {
-    // toggle DOM element
     this.itemTargets.forEach((item) => {
-      item.classList.toggle(this.toggleClass);
+      item.classList.toggle('hidden');
     });
-  }
-
-  get toggleClass() {
-    return this.data.get('class') || 'hidden';
   }
 }
