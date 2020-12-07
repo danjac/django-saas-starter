@@ -4,3 +4,6 @@
 [submodule "examples/conduit"]
 	path = examples/conduit
 	url = https://github.com/danjac/conduit
+[submodule "radiofeed"]
+	path = radiofeed
+	url = https://github.com/danjac/radiofeed
