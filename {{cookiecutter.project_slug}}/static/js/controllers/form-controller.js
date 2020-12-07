@@ -13,6 +13,11 @@ export default class extends Controller {
 
     const data = new FormData(this.element);
 
+    if (method.toLowerCase() === 'get') {
+      Turbolinks.visit(url + '?' + new URLSearchParams(data).toString());
+      return;
+    }
+
     const response = await axios({
       data,
       headers: {
