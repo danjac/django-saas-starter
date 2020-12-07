@@ -56,9 +56,7 @@ You can now start the application:
 
     docker-compose up -d
     
-You can access the local server at the following address:
-
-    http://0.0.0.0:80
+You can access the site locally at http://localhost
 
 To ensure all dependencies are up to date, you can use pip-tools (pip install piptools):
 
