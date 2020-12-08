@@ -6,14 +6,9 @@ export default class extends Controller {
 
   static values = {
     url: String,
-    external: Boolean,
   };
 
   visit() {
-    if (this.externalValue) {
-      window.location.href = this.urlValue;
-    } else {
-      Turbolinks.visit(this.urlValue);
-    }
+    Turbolinks.visit(this.urlValue);
   }
 }
