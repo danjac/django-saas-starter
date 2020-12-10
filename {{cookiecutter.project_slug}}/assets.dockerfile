@@ -7,5 +7,5 @@ COPY tailwind.config.js ./tailwind.config.js
 COPY package.json ./package.json
 COPY yarn.lock ./yarn.lock
 
-RUN yarn
+RUN yarn install
 
