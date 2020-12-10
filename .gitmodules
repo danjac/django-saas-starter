@@ -7,3 +7,6 @@
 [submodule "examples/radiofeed"]
 	path = examples/radiofeed
 	url = https://github.com/danjac/radiofeed
+[submodule "examples/chatter"]
+	path = examples/chatter
+	url = https://github.com/danjac/chatter/
