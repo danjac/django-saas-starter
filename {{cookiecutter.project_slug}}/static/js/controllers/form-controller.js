@@ -1,15 +1,15 @@
-import axios from "axios";
-import Turbolinks from "turbolinks";
+import axios from 'axios';
+import Turbolinks from 'turbolinks';
 
-import { Controller } from "stimulus";
+import { Controller } from 'stimulus';
 
 export default class extends Controller {
   async submit(event) {
     event.preventDefault();
 
     const referrer = location.href;
-    const method = this.element.getAttribute("method");
-    const url = this.element.getAttribute("action");
+    const method = this.element.getAttribute('method');
+    const url = this.element.getAttribute('action');
 
     const data = new FormData(this.element);
 
@@ -21,12 +21,12 @@ export default class extends Controller {
     const response = await axios({
       data,
       headers: {
-        "Turbolinks-Referrer": referrer,
+        'Turbolinks-Referrer': referrer,
       },
       method,
       url,
     });
-    const contentType = response.headers["content-type"];
+    const contentType = response.headers['content-type'];
 
     if (contentType.match(/html/)) {
       // errors in form, re-render
@@ -35,11 +35,15 @@ export default class extends Controller {
         Turbolinks.Snapshot.wrap(response.data)
       );
       Turbolinks.visit(referrer, {
-        action: "restore",
+        action: 'restore',
       });
     } else if (contentType.match(/javascript/)) {
       /* eslint-disable-next-line no-eval */
       eval(response.data);
     }
+  }
+
+  reset() {
+    this.element.reset();
   }
 }
