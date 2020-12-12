@@ -107,7 +107,7 @@ https://devcenter.heroku.com/articles/git
 https://www.heroku.com/deploy-with-docker
 
 
-You will need to set the following Heroku environment variables:
+You will need to set the following Heroku environment variables. This can be done on your Heroku app dashboard or by using the CLI action *heroku config:set*:
 
 - **ADMINS**: comma separated in form _my full name <name@mysite.com>,other name <othername@mysite.com>_
 - **ADMIN_URL**: should be something other than "admin/". Must end in forward slash.
