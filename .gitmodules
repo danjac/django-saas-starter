@@ -10,3 +10,6 @@
 [submodule "examples/chatter"]
 	path = examples/chatter
 	url = https://github.com/danjac/chatter/
+[submodule "movieapp"]
+	path = movieapp
+	url = https://github.com/danjac/movieapp
