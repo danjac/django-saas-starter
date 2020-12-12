@@ -55,7 +55,7 @@ To run unit tests with pytest:
 You can now start the application:
 
     docker-compose up -d
-    
+
 You can access the site locally at http://localhost
 
 To ensure all dependencies are up to date, you can use pip-tools (pip install piptools):
@@ -122,6 +122,8 @@ You will need to set the following Heroku environment variables:
 - **MAILGUN_SENDER_DOMAIN**: see your Mailgun settings
 - **REDIS_URL**: provided by Heroku Redis buildpack
 - **SECRET_KEY**: Django secret key. Use e.g. https://miniwebtool.com/django-secret-key-generator/ to create new key.
+
+Your S3 bucket should have the *static* folder for static content, and *media* if you wish to have user-uploaded content.
 
 To deploy just run:
 
