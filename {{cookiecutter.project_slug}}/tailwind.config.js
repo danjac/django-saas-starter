@@ -1,4 +1,7 @@
 /* eslint-disable */
+
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
@@ -8,11 +11,14 @@ module.exports = {
     content: ['./templates/**/*.html'],
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        orange: colors.orange,
+      },
+    },
   },
   variants: {
     textColor: ['responsive', 'hover', 'focus', 'visited'],
   },
-
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
