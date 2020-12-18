@@ -1,16 +1,17 @@
-  {% if google_tracking_id %}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async
-          src="https://www.googletagmanager.com/gtag/js?id={{ google_tracking_id }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+{% raw %}
+{% if google_tracking_id %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async
+        src="https://www.googletagmanager.com/gtag/js?id={{ google_tracking_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
 
-    gtag('config', '{{ google_tracking_id }}');
-  </script>
-  {% endif %}
-
+  gtag('config', '{{ google_tracking_id }}');
+</script>
+{% endif %}
+{% endraw %}
