@@ -98,8 +98,6 @@ Set up Heroku, S3, Cloudfront and Git as per the instructions. You need to set u
 
     heroku git:remote -a APP_NAME
 
-    heroku stack:set container
-
 For more details see:
 
 https://devcenter.heroku.com/articles/git
@@ -117,7 +115,7 @@ You will need to set the following Heroku environment variables. This can be don
 - **AWS_S3_CUSTOM_DOMAIN**: your cloudfront domain e.g. *xyz123abcdefg.cloudfront.net*
 - **DATABASE_URL**: provided by Heroku PostgreSQL buildpack
 - **DISABLE_COLLECTSTATIC**: set to "1"
-- **DJANGO_SETTINGS_MODULE**: should always be *myproject.config.settings.heroku*
+- **DJANGO_SETTINGS_MODULE**: should always be *myproject.config.settings.production*
 - **MAILGUN_API_KEY**: see your Mailgun settings
 - **MAILGUN_SENDER_DOMAIN**: see your Mailgun settings
 - **REDIS_URL**: provided by Heroku Redis buildpack
