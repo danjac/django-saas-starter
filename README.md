@@ -96,14 +96,18 @@ PostgreSQL and Redis buildpacks are required.
 
 Set up Heroku, S3, Cloudfront and Git as per the instructions. You need to set up Heroku to deploy a Docker image:
 
-    heroku git:remote -a APP_NAME
+> heroku git:remote -a APP_NAME
+
+Set the default Heroku buildpack to Python:
+
+> heroku buildpacks:set heroku/python -a myapp
+
 
 For more details see:
 
 https://devcenter.heroku.com/articles/git
 
 https://www.heroku.com/deploy-with-docker
-
 
 You will need to set the following Heroku environment variables. This can be done on your Heroku app dashboard or by using the CLI action *heroku config:set*:
 
@@ -125,7 +129,7 @@ Your S3 bucket should have the *static* folder for static content, and *media* i
 
 To deploy just run:
 
-    ./scripts/deploy
+> ./scripts/deploy
 
 This is a very barebones deployment that just pushes assets to S3 and deploys your application to Heroku. You may wish to expand this to use a CI/CD pipeline such as Github Actions or Travis, or Ansible or Terraform for provisioning servers, manage staging environments etc.
 
