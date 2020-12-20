@@ -131,12 +131,40 @@ This is a very barebones deployment that just pushes assets to S3 and deploys yo
 
 If you want to include Sentry for production performance and error monitoring, just uncomment the import in the settings module *config/settings/production.py* and set **SENTRY_URL** (as provided by your Sentry account) in your Heroku environment.
 
+## Deployment with Dokku
+
+If you want to use Dokku instead of Heroku, first set up a Dokku application and domain as per the Dokku documentation specific to your provider (for example, on a Digital Ocean droplet). You should install the PostgreSQL and Redis buildpacks:
+
+> dokku apps:create myapp
+
+> dokku domains:add myapp myapp.com
+
+Make sure you add buildpacks for PostgreSQL and Redis:
+
+> dokku plugin:install https://github.com/dokku/dokku-postgres.git
+
+> dokku postgres:create myapp_db
+
+> dokku postgres:link myapp_db myapp
+
+> dokku plugin:install https://github.com/dokku/dokku-redis.git
+
+> dokku redis:create myapp_redis
+
+> dokku redis:link myapp_redis myapp
+
+These should automatically set **DATABASE_URL** and **REDIS_URL**.
+
+Environment variables are as for Heroku. You should also set **BUILDPACK_URL** to *https://github.com/heroku/heroku-buildpack-python*. It is recommended to install LetsEncrypt for Dokku (see link below). You may also need to
+run *dokku ps:scale myapp worker=1* to start the Celery worker.
 
 ## References
 
 * Turbolinks: https://github.com/turbolinks/turbolinks
 * StimulusJS: https://stimulusjs.org/
 * Tailwind: https://tailwindcss.com/
+* Dokku: https://github.com/dokku/dokku
+* Dokku LetsEncrypt: https://github.com/dokku/dokku-letsencrypt.git
 
 ## License
 
