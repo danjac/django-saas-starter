@@ -133,7 +133,7 @@ If you want to include Sentry for production performance and error monitoring, j
 
 ## Deployment with Dokku
 
-If you want to use Dokku instead of Heroku, first set up a Dokku application and domain as per the Dokku documentation specific to your provider (for example, on a Digital Ocean droplet). You should install the PostgreSQL and Redis buildpacks:
+If you want to use Dokku instead of Heroku, first set up a Dokku application and domain as per the Dokku documentation specific to your provider (for example, on a Digital Ocean droplet).
 
 > dokku apps:create myapp
 
