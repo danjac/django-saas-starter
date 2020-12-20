@@ -129,7 +129,8 @@ To deploy just run:
 
 This is a very barebones deployment that just pushes assets to S3 and deploys your application to Heroku. You may wish to expand this to use a CI/CD pipeline such as Github Actions or Travis, or Ansible or Terraform for provisioning servers, manage staging environments etc.
 
-If you want to include Sentry for production performance and error monitoring, just uncomment the import in the settings module *config/settings/heroku.py* and set **SENTRY_URL** (as provided by your Sentry account) in your Heroku environment.
+If you want to include Sentry for production performance and error monitoring, just uncomment the import in the settings module *config/settings/production.py* and set **SENTRY_URL** (as provided by your Sentry account) in your Heroku environment.
+
 
 ## References
 
