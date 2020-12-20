@@ -155,7 +155,7 @@ Make sure you add buildpacks for PostgreSQL and Redis:
 
 These should automatically set **DATABASE_URL** and **REDIS_URL**.
 
-Environment variables are as for Heroku. You should also set **BUILDPACK_URL** to *https://github.com/heroku/heroku-buildpack-python*. It is recommended to install LetsEncrypt for Dokku (see link below). You may also need to
+Environment variables are as for Heroku (*dokku config:set --no-restart*). You should also set **BUILDPACK_URL** to *https://github.com/heroku/heroku-buildpack-python*. It is recommended to install LetsEncrypt for Dokku (see link below). You may also need to
 run *dokku ps:scale myapp worker=1* to start the Celery worker.
 
 ## References
