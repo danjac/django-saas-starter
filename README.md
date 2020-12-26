@@ -7,7 +7,7 @@ It is assumed that you have basic familiarity with Django, Heroku and AWS.
 ## Features
 
 * Docker for local development
-* Turbolinks/StimulusJS for JS
+* Turbo/StimulusJS for frontend
 * Tailwind/PostCSS for CSS
 * Celery
 * Redis
@@ -84,9 +84,9 @@ Example configuration is provided for social logins e.g. Google or Facebook. See
 
 You can add custom classes in the file *static/css/app.css* using the *@apply* directive. Compilation should be on-the-fly using PostCSS. See the Tailwind docs for more details.
 
-## Turbolinks/Stimulusjs
+## Hotwired
 
-Turbolinks and Stimulusjs have been integrated to provide sufficient frontend interactivity without the complexity and overhead of an SPA architecture. A few simple controllers are included to get started with. A small middleware class is provided to handle redirects, as detailed in the Turbolinks documentation.
+The Hotwired (Turbo/Stimulus) stack has been integrated to provide sufficient frontend interactivity without the complexity and overhead of an SPA architecture. A few simple controllers are included to get started with. A small middleware class is provided to handle redirects, as detailed in the documentation linked below.
 
 ## Deployment
 
@@ -164,7 +164,7 @@ run *dokku ps:scale myapp worker=1* to start the Celery worker.
 
 ## References
 
-* Turbolinks: https://github.com/turbolinks/turbolinks
+* Hotwired/Turbo: https://turbo.hotwire.dev/
 * StimulusJS: https://stimulusjs.org/
 * Tailwind: https://tailwindcss.com/
 * Dokku: https://github.com/dokku/dokku
