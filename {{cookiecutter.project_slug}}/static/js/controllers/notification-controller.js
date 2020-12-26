@@ -7,7 +7,6 @@ export default class extends Controller {
 
   static values = {
     timeout: Number,
-    storageKey: String,
   };
 
   connect() {
