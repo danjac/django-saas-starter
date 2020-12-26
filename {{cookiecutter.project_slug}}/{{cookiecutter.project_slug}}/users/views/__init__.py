@@ -6,13 +6,13 @@ from django.utils import timezone
 from django.views.decorators.http import require_POST
 
 from {{cookiecutter.project_slug}}.common.turbo.response import (
-    TurboStreamRemoveResponse,
+    TurboStreamResponse,
 )
 
 
 @require_POST
 def accept_cookies(request):
-    response = TurboStreamRemoveResponse("accept-cookies")
+    response = TurboStreamResponse(action="remove", target="accept-cookies")
     response.set_cookie(
         "accept-cookies",
         value="true",
