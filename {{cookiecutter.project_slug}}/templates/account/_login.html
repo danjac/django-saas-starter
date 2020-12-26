@@ -13,16 +13,16 @@
   {% include "_form_errors.html" with errors=form.non_field_errors %}
   {% with WIDGET_ERROR_CLASS="border-red-600 text-red-600" %}
   <div class="mb-3">
-    {% render_field form.login placeholder=form.login.label class="p-1 w-full bg-gray-900" %}
+    {% render_field form.login placeholder=form.login.label class="p-1 w-full" %}
     {% include "_form_errors.html" with errors=form.login.errors %}
   </div>
   <div class="mb-3">
-    {% render_field form.password placeholder=form.password.label class="p-1 w-full bg-gray-900" %}
+    {% render_field form.password placeholder=form.password.label class="p-1 w-full" %}
     {% include "_form_errors.html" with errors=form.password.errors %}
   </div>
   <div class="mb-3">
     <label class="flex items-center mb-2 w-full">
-      {% render_field form.remember class="mr-3 bg-gray-900" %}
+      {% render_field form.remember class="mr-3" %}
       {{ form.remember.label }}
     </label>
     {% include "_form_errors.html" with errors=form.remember.errors %}

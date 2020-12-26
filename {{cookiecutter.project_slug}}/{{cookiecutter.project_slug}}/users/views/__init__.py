@@ -17,5 +17,6 @@ def accept_cookies(request):
         "accept-cookies",
         value="true",
         expires=timezone.now() + datetime.timedelta(days=30),
+        samesite="Lax"
     )
     return response
