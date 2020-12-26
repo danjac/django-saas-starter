@@ -1,10 +1,7 @@
-# All auth views
-
 # Third Party Libraries
 from allauth.socialaccount import views as socialaccount_views
 
-# RadioFeed
-from radiofeed.common.turbo.mixins import TurboStreamFormMixin
+from {{cookiecutter.project_slug}}.common.turbo.mixins import TurboStreamFormMixin
 
 
 class SignupView(TurboStreamFormMixin, socialaccount_views.SignupView):
