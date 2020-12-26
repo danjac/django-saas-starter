@@ -11,6 +11,7 @@ class TurboStreamRemoveResponse(HttpResponse):
         super().__init__(
             f'<turbo-stream target="{target}" action="remove"></turbo-stream>',
             content_type="text/html; turbo-stream;",
+            **kwargs,
         )
 
 
@@ -50,7 +51,10 @@ class TurboFrameTemplateResponse(TemplateResponse):
     def __init__(self, request, template, context, dom_id, **kwargs):
 
         super().__init__(
-            request, template, context, **kwargs,
+            request,
+            template,
+            context,
+            **kwargs,
         )
 
         self._dom_id = dom_id
