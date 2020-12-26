@@ -1,0 +1,10 @@
+{% raw %}
+{% load socialaccount %}
+
+{% get_providers as socialaccount_providers %}
+
+{% for provider in socialaccount_providers %}
+<a class="font-semibold underline hover:text-gray-300 {{provider.id}}{% if not forloop.first %} ml-2 {% elif not forloop.last %} pr-2 border-r{% endif %}"
+   href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
+{% endfor %}
+{% endraw %}

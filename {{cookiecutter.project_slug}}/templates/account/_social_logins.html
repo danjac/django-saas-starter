@@ -1,3 +1,4 @@
+{% raw %}
 {% load socialaccount %}
 {% get_providers as socialaccount_providers %}
 {% if socialaccount_providers %}
@@ -7,3 +8,4 @@
 </div>
 {% include "socialaccount/snippets/login_extra.html" %}
 {% endif %}
+{% endraw %}
