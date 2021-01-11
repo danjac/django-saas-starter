@@ -5,7 +5,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
 
-from {{cookicutter.project_slug}}.users.views import accept_cookies
+from {{cookiecutter.project_slug}}.users.views import accept_cookies
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="index.html")),
