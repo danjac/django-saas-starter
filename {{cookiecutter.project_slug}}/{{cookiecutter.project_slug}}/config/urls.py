@@ -10,7 +10,7 @@ from {{cookiecutter.project_slug}}.users.views import accept_cookies
 urlpatterns = [
     path("", TemplateView.as_view(template_name="index.html")),
     path("account/", include("turbo_allauth.urls")),
-    path("accept-cookies/", accept_cookies),
+    path("accept-cookies/", accept_cookies, name="accept_cookies"),
     path(settings.ADMIN_URL, admin.site.urls),
 ]
 
