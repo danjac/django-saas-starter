@@ -46,7 +46,7 @@ CSRF_COOKIE_DOMAIN = env("CSRF_COOKIE_DOMAIN", default=None)
 CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS", default=[])
 
 ROOT_URLCONF = "{{ cookiecutter.project_slug }}.config.urls"
-WSGI_APPLICATION = "{{ cookiecutter.project_slug }}.config.wsgi.application"
+ASGI_APPLICATION = "{{ cookiecutter.project_slug }}.config.asgi.application"
 
 LOCAL_APPS = [
     "{{ cookiecutter.project_slug }}.users.apps.UsersConfig",
@@ -71,6 +71,7 @@ INSTALLED_APPS = [
     "django_extensions",
     "djcelery_email",
     "widget_tweaks",
+    "channels",
 ] + LOCAL_APPS
 
 MIDDLEWARE = [
