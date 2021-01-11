@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.postgres",
     "django.contrib.staticfiles",
+    "turbo_allauth",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
