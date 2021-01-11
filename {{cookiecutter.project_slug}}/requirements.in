@@ -1,12 +1,13 @@
 boto3
 celery
+channels
+channels-redis
 cryptography>=3.2
 dj-database-url
 django
 django-allauth
 django-anymail[mailgun]
 django-celery-email
-django-channels
 django-environ
 django-extensions
 django-model-utils
@@ -32,4 +33,7 @@ pytz
 redis
 sentry_sdk
 unidecode
+uvicorn
+uvloop
+websockets
 werkzeug
