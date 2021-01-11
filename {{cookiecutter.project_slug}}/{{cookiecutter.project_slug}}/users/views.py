@@ -5,7 +5,7 @@ import datetime
 from django.utils import timezone
 from django.views.decorators.http import require_POST
 
-from turbo.response import TurboStream
+from turbo_response import TurboStream
 
 
 @require_POST
