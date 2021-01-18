@@ -29,10 +29,6 @@
     {% include "_form_errors.html" with errors=form.username.errors %}
   </div>
   <div class="mb-3">
-    {% render_field form.email placeholder=form.email.label class="p-1 w-full" %}
-    {% include "_form_errors.html" with errors=form.email.errors %}
-  </div>
-  <div class="mb-3">
     {% render_field form.password1 placeholder=form.password1.label class="p-1 w-full" %}
     {% include "_form_errors.html" with errors=form.password1.errors %}
   </div>
