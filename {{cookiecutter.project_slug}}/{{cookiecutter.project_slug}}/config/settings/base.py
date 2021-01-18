@@ -81,7 +81,6 @@ MIDDLEWARE = [
     "django.middleware.gzip.GZipMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "{{ cookiecutter.project_slug }}.common.middleware.http.HttpResponseNotAllowedMiddleware",
 ]
 
 DEFAULT_PAGE_SIZE = 12
