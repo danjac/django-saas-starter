@@ -6,6 +6,7 @@
 
 <h1 class="text-lg mb-3 font-bold">{% translate "Sign In" %}</h1>
 
+{% url 'account_signup' as signup_url %}
 <p class="mb-3">{% blocktranslate %}If you have not created an account yet, then please
   <a class="underline hover:text-gray-300"
      href="{{ signup_url }}">sign up</a> first.{% endblocktranslate %}</p>
