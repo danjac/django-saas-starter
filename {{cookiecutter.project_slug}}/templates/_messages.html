@@ -1,12 +1,14 @@
 {% raw %}
+{# server-side #}
 {% if messages %}
 <div class="flex justify-center">
   {% for message in messages %}
-  <div data-controller="notification"
-       data-notification-timeout-value="3000"
-       class="fixed z-50 w-4/5 lg:w-1/3 flex items-center p-3 rounded shadow-xl mt-3 message {{ message.tags }}">
+  <div data-controller="toast"
+       data-toast-dismiss-action-value="remove"
+       data-toast-timeout-value="3000"
+       class="fixed z-50 w-4/5 lg:w-1/3 flex items-center p-3 rounded shadow-xl message {{ message.tags }}">
     <div class="mx-auto text-center">{{ message }}</div>
-    <button data-action="notification#remove"
+    <button data-action="toast#dismiss"
             class="float-right">
       <i class="fa fa-times-circle"></i>
     </button>
@@ -14,4 +16,19 @@
   {% endfor %}
 </div>
 {% endif %}
+{# client-side #}
+<div class="flex justify-center hidden"
+     data-controller="toast"
+     data-toast-dismiss-action-value="hide"
+     data-toast-timeout-value="3000">
+  <div data-toast-target="container"
+       class="fixed z-50 w-4/5 lg:w-1/3 flex items-center p-3 rounded shadow-xl message">
+    <div class="mx-auto text-center"
+         data-toast-target="message"></div>
+    <button data-action="toast#dismiss"
+            class="float-right">
+      <i class="fa fa-times-circle"></i>
+    </button>
+  </div>
+</div>
 {% endraw %}
