@@ -16,7 +16,7 @@ class TestLogin:
 
     def test_post_login_valid(self, client, user, password):
         resp = client.post(
-            reverse("account_login"), {"username": "user", "password": password}
+            reverse("account_login"), {"username": user.username, "password": password}
         )
         assert resp.url == settings.LOGIN_REDIRECT_URL
 

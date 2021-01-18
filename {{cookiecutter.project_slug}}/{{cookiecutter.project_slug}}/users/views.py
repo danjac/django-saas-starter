@@ -30,7 +30,7 @@ def login(request):
         form = AuthenticationForm(request.POST, request=request)
         if form.is_valid():
             auth_login(request, form.get_user())
-        return redirect_303(redirect_url)
+            return redirect_303(redirect_url)
     else:
         form = AuthenticationForm(request=request)
     return render_form_response(
@@ -52,6 +52,8 @@ def signup(request):
             )
             auth_login(request, user)
             return redirect_303(settings.LOGIN_REDIRECT_URL)
+    else:
+        form = UserCreationForm()
     return render_form_response(request, form, "account/signup.html")
 
 
