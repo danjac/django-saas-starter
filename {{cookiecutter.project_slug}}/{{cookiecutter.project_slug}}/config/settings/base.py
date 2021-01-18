@@ -192,7 +192,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "debug": False,
-            "builtins": [],
+            "builtins": ["{{ cookiecutter.project_slug }}.common.templatetags"],
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
