@@ -27,7 +27,7 @@ def login(request):
     if request.user.is_authenticated:
         return redirect(redirect_url)
     if request.method == "POST":
-        form = AuthenticationForm(request.POST, request=request)
+        form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             auth_login(request, form.get_user())
             return redirect_303(redirect_url)
