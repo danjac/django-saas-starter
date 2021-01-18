@@ -5,12 +5,14 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic import TemplateView
 
-from {{cookiecutter.project_slug}}.users.views import accept_cookies
+from {{ cookiecutter.project_slug }}.users import views as account_views
 
 urlpatterns = [
     path("", TemplateView.as_view(template_name="index.html")),
-    path("account/", include("turbo_allauth.urls")),
-    path("accept-cookies/", accept_cookies, name="accept_cookies"),
+    path("login/", account_views.login, name="account_login"),
+    path("logout/", account_views.logout, name="account_logout"),
+    path("signup/", account_views.signup, name="account_signup"),
+    path("accept-cookies/", account_views.accept_cookies, name="accept_cookies"),
     path(settings.ADMIN_URL, admin.site.urls),
 ]
 

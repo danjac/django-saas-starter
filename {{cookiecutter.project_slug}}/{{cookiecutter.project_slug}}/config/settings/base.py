@@ -63,11 +63,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.postgres",
     "django.contrib.staticfiles",
-    "turbo_allauth",
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
-    "allauth.socialaccount.providers.google",
     "django_extensions",
     "djcelery_email",
     "widget_tweaks",
@@ -103,7 +98,6 @@ AUTH_USER_MODEL = "users.User"
 
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -115,28 +109,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-HOME_URL = LOGIN_REDIRECT_URL = "/"
+HOME_URL = LOGIN_REDIRECT_URL = LOGOUT_REDIRECT_URL = "/"
 
 LOGIN_URL = "account_login"
-
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_AUTHENTICATION_METHOD = "username_email"
-
-SOCIALACCOUNT_PROVIDERS = {
-    "google": {
-        "SCOPE": [
-            "profile",
-            "email",
-        ],
-        "AUTH_PARAMS": {
-            "access_type": "online",
-        },
-    }
-}
-
-SOCIALACCOUNT_ADAPTER = (
-    "{{ cookiecutter.project_slug }}.users.adapters.SocialAccountAdapter"
-)
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/

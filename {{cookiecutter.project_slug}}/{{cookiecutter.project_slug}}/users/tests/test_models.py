@@ -1,6 +1,5 @@
 # Third Party Libraries
 import pytest
-from allauth.account.models import EmailAddress
 
 # Local
 from ..factories import UserFactory
@@ -24,17 +23,6 @@ class TestUserManager:
         assert user.is_superuser
         assert user.is_staff
 
-    def test_for_email_matching_email_field(self, user_model):
-
-        user = UserFactory(email="test@gmail.com")
-        assert user_model.objects.for_email("test@gmail.com").first() == user
-
-    def test_for_email_matching_email_address_instance(self, user_model):
-
-        user = UserFactory()
-        EmailAddress.objects.create(user=user, email="test@gmail.com")
-        assert user_model.objects.for_email("test@gmail.com").first() == user
-
     def test_matches_usernames(self, user_model):
         user_1 = UserFactory(username="first")
         user_2 = UserFactory(username="second")
@@ -50,12 +38,3 @@ class TestUserManager:
 
         # check empty set returns no results
         assert user_model.objects.matches_usernames([]).count() == 0
-
-
-class TestUserModel:
-    def test_get_email_addresses(self, user):
-
-        user.emailaddress_set.create(email="test1@gmail.com")
-        emails = user.get_email_addresses()
-        assert user.email in emails
-        assert "test1@gmail.com" in emails

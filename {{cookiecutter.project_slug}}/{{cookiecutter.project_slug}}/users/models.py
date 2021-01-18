@@ -5,20 +5,6 @@ from django.utils.translation import gettext_lazy as _
 
 
 class UserQuerySet(models.QuerySet):
-    def for_email(self, email):
-        """Returns users matching this email address, including both
-        primary and secondary email addresses
-
-        Args:
-            email (str): email address
-
-        Returns:
-            QuerySet
-        """
-        return self.filter(
-            models.Q(emailaddress__email__iexact=email) | models.Q(email__iexact=email)
-        )
-
     def matches_usernames(self, names):
         """Returns users matching the (case insensitive) username.
 
@@ -57,13 +43,3 @@ class User(AbstractUser):
     name = models.CharField(_("Full name"), blank=True, max_length=255)
 
     objects = UserManager()
-
-    def get_email_addresses(self):
-        """Get set of emails belonging to user.
-
-        Returns:
-            set: set of email addresses
-        """
-        return set([self.email]) | set(
-            self.emailaddress_set.values_list("email", flat=True)
-        )

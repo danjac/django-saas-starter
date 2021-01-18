@@ -19,10 +19,6 @@ def user_model():
     return get_user_model()
 
 
-@pytest.fixture
-def user():
-    return UserFactory()
-
 
 @pytest.fixture
 def anonymous_user():
@@ -30,11 +26,19 @@ def anonymous_user():
 
 
 @pytest.fixture
-def login_user(client):
-    password = "t3SzTP4sZ"
-    user = UserFactory()
+def password():
+    return "testpass1"
+
+@pytest.fixture
+def user(password):
+    user = UserFactory.build()
     user.set_password(password)
     user.save()
+    return user
+
+
+@pytest.fixture
+def login_user(client, user, password):
     client.login(username=user.username, password=password)
     return user
 
