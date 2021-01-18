@@ -13,7 +13,7 @@ export default class extends Controller {
   connect() {
     if (this.hasTimeoutValue && this.timeoutValue > 0) {
       // automatically toggle elements on page load after timeout
-      setTimeout(() => this.element.remove(), this.timeoutValue);
+      setTimeout(() => this.remove(), this.timeoutValue);
     }
     useTurbo(this);
   }
@@ -50,8 +50,16 @@ export default class extends Controller {
     this.element.classList.remove('hidden');
 
     this.timeout = setTimeout(() => {
-      this.element.classList.add('hidden');
+      this.hide();
       clearTimeout(this.timeout);
     }, this.removeAfterValue || TIMEOUT);
+  }
+
+  hide() {
+    this.element.classList.add('hidden');
+  }
+
+  remove() {
+    this.element.remove();
   }
 }
