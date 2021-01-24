@@ -36,10 +36,17 @@ services:
       context: .
       dockerfile: assets.dockerfile
     privileged: true
-    command: yarn dev
     volumes:
       - .:/app
       - /app/node_modules
+
+  watchjs:
+    <<: *assets
+    command: ['watchexec', '-w', 'static/src/js', '--', 'yarn', 'watch-js']
+
+  watchcss:
+    <<: *assets
+    command: ['watchexec', '-w', 'static/src/css', '--', 'yarn', 'watch-css']
 
   django: &django
     build:

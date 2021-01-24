@@ -166,7 +166,7 @@ TEMPLATES = [
         "APP_DIRS": True,
         "OPTIONS": {
             "debug": False,
-            "builtins": ["{{ cookiecutter.project_slug }}.common.templatetags"],
+            "builtins": ["{{ cookiecutter.project_slug }}.template.templatetags"],
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
@@ -176,10 +176,10 @@ TEMPLATES = [
                 "django.template.context_processors.static",
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
-                "{{ cookiecutter.project_slug }}.common.context_processors.is_cookies_accepted",
+                "{{ cookiecutter.project_slug }}.template.context_processors.is_cookies_accepted",
             ],
             "libraries": {
-                "pagination": "{{ cookiecutter.project_slug }}.common.pagination.templatetags"
+                "pagination": "{{ cookiecutter.project_slug }}.template.pagination.templatetags"
             },
         },
     }
