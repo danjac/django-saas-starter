@@ -179,7 +179,7 @@ TEMPLATES = [
                 "{{ cookiecutter.project_slug }}.template.context_processors.is_cookies_accepted",
             ],
             "libraries": {
-                "pagination": "{{ cookiecutter.project_slug }}.template.pagination.templatetags"
+                "pagination": "{{ cookiecutter.project_slug }}.pagination.templatetags"
             },
         },
     }
