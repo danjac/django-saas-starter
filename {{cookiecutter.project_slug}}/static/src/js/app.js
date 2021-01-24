@@ -1,9 +1,16 @@
 import '@hotwired/turbo';
 
 import { Application } from 'stimulus';
-import { definitionsFromContext } from 'stimulus/webpack-helpers';
+
+import ConfirmController from './controllers/confirm-controller';
+import LinkController from './controllers/link-controller';
+import ToastController from './controllers/toast-controller';
+import ToggleController from './controllers/toggle-controller';
+
+application.register('confirm', ConfirmController);
+application.register('link', LinkController);
+application.register('toast', ToastController);
+application.register('toggle', ToggleController);
 
 // Stimulus setup
 const application = Application.start();
-const context = require.context('./controllers', true, /\.js$/);
-application.load(definitionsFromContext(context));
