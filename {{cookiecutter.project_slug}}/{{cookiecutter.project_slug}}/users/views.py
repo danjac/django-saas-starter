@@ -16,6 +16,8 @@ from django.views.decorators.debug import sensitive_post_parameters
 from django.views.decorators.http import require_POST
 from turbo_response import TurboStream, redirect_303, render_form_response
 
+from {{cookiecutter.project_slug}}.shortcuts import handle_form
+
 from .forms import UserCreationForm
 
 
@@ -26,25 +28,26 @@ def login(request):
     redirect_url = get_redirect_url(request) or settings.LOGIN_REDIRECT_URL
     if request.user.is_authenticated:
         return redirect(redirect_url)
-    if request.method == "POST":
-        form = AuthenticationForm(request, request.POST)
-        if form.is_valid():
+
+    with handle_form(request, AuthenticationForm, _request=request) as (
+        form,
+        is_success,
+    ):
+        if is_success:
             auth_login(request, form.get_user())
             return redirect_303(redirect_url)
-    else:
-        form = AuthenticationForm(request=request)
-    return render_form_response(
-        request, form, "account/login.html", {REDIRECT_FIELD_NAME: redirect_url}
-    )
+
+        return render_form_response(
+            request, form, "account/login.html", {REDIRECT_FIELD_NAME: redirect_url}
+        )
 
 
 @sensitive_post_parameters()
 @csrf_protect
 @never_cache
 def signup(request):
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
+    with handle_form(request, UserCreationForm) as (form, is_success):
+        if is_success:
             form.save()
             user = authenticate(
                 username=form.cleaned_data["username"],
@@ -52,9 +55,7 @@ def signup(request):
             )
             auth_login(request, user)
             return redirect_303(settings.LOGIN_REDIRECT_URL)
-    else:
-        form = UserCreationForm()
-    return render_form_response(request, form, "account/signup.html")
+        return render_form_response(request, form, "account/signup.html")
 
 
 @require_POST
