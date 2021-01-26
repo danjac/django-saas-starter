@@ -38,7 +38,12 @@ def login(request):
             return redirect_303(redirect_url)
 
         return render_form_response(
-            request, form, "account/login.html", {REDIRECT_FIELD_NAME: redirect_url}
+            request, form, "account/login.html",
+            {
+                "redirect_field_name": REDIRECT_FIELD_NAME,
+                "redirect_field_value": redirect_url,
+            },
+
         )
 
 
