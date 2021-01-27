@@ -9,7 +9,7 @@ docker-compose run --rm assets yarn build-css
 echo "Deploying assets to S3..."
 docker-compose run --rm \
     -e DJANGO_SETTINGS_MODULE={{ cookiecutter.project_slug }}.config.settings.deploy \
-    django ./manage.py collectstatic --noinput -v 3 -i src
+    django ./manage.py collectstatic --noinput -v 3 -i src -i dev
 
 echo "Deploying to Heroku..."
 git push heroku master
