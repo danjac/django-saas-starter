@@ -53,6 +53,7 @@ gprof2dot==2019.11.30     # via django-silk
 gunicorn==20.0.4          # via -r requirements.in
 h11==0.12.0               # via uvicorn
 hiredis==1.1.0            # via aioredis
+httptools==0.1.1          # via -r requirements.in
 hyperlink==21.0.0         # via autobahn, twisted
 idna==2.10                # via hyperlink, requests, twisted
 incremental==17.5.0       # via twisted
